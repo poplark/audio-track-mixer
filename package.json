@@ -4,7 +4,8 @@
   "description": "A mixer which can mix two audio track (MediaStreamTrack) into one.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -18,10 +19,25 @@
     "track",
     "MediaStreamTrack"
   ],
+  "files": [
+    "lib",
+    "types",
+    "README.md",
+    "README-zh_CN.md",
+    "package.json"
+  ],
   "author": "poplark",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/poplark/audio-track-mixer/issues"
   },
-  "homepage": "https://github.com/poplark/audio-track-mixer#readme"
+  "homepage": "https://github.com/poplark/audio-track-mixer#readme",
+  "devDependencies": {
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "write-file-webpack-plugin": "^4.5.1"
+  }
 }
