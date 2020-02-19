@@ -1,0 +1,27 @@
+{
+  "name": "audio-track-mixer",
+  "version": "0.0.1",
+  "description": "A mixer which can mix two audio track (MediaStreamTrack) into one.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poplark/audio-track-mixer.git"
+  },
+  "keywords": [
+    "mixer",
+    "audio",
+    "media",
+    "stream",
+    "track",
+    "MediaStreamTrack"
+  ],
+  "author": "poplark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poplark/audio-track-mixer/issues"
+  },
+  "homepage": "https://github.com/poplark/audio-track-mixer#readme"
+}
