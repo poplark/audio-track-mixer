@@ -6,5 +6,5 @@ export default class AudioTrackMixer {
     addTrack(track: MediaStreamTrack): AudioTrackMixer;
     removeTrack(track: MediaStreamTrack): AudioTrackMixer;
     getTracks(): Array<MediaStreamTrack>;
-    getMixedTrack(): MediaStreamTrack | undefined;
+    getMixedTrack(): MediaStreamTrack;
 }
