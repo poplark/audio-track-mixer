@@ -52,8 +52,8 @@ export default class AudioTrackMixer {
 
   getTracks(): Array<MediaStreamTrack> {
     const tracks: Array<MediaStreamTrack> = [];
-    this.cache.forEach(function (item: TrackCache) {
-      tracks.push(item.track);
+    this.cache.forEach(function (cache: TrackCache) {
+      tracks.push(cache.track);
     });
     return tracks;
   }
@@ -64,6 +64,15 @@ export default class AudioTrackMixer {
 
   getMixedMediaStream(): MediaStream {
     return this.destinationNode.stream;
+  }
+
+  destroy(): Promise<void> {
+    this.cache.forEach((cache: TrackCache) => {
+      cache.gainNode.disconnect(this.destinationNode);
+      cache.sourceNode.disconnect(cache.gainNode);
+    });
+    this.cache.clear();
+    return this.audioContext.close();
   }
 
   static getTracks(stream: MediaStream): Array<MediaStreamTrack> {

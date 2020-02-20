@@ -8,5 +8,6 @@ export default class AudioTrackMixer {
     getTracks(): Array<MediaStreamTrack>;
     getMixedTrack(): MediaStreamTrack;
     getMixedMediaStream(): MediaStream;
+    destroy(): Promise<void>;
     static getTracks(stream: MediaStream): Array<MediaStreamTrack>;
 }
