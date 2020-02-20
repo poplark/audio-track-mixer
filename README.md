@@ -63,9 +63,9 @@ const mixedTrack = mixer.getMixedTrack();
 ## API
 
 
-## Methods of AudioTrackMixer
+### Methods of AudioTrackMixer
 
-### 1. constructor
+#### 1. constructor
 
 The constructor of the AudioTrackMixer class.
 
@@ -73,18 +73,18 @@ The constructor of the AudioTrackMixer class.
 const mixer = new AudioTrackMixer();
 ```
 
-#### parameters
+##### parameters
 
 no parameters
 
-#### return values
+##### return values
 
 - mixer
   - type: AudioTrackMixer
   - description: The method will return an AudioTrackMixer object.
 
 
-### 2. addTrack
+#### 2. addTrack
 
 Add audio track into the mixer.
 
@@ -92,20 +92,20 @@ Add audio track into the mixer.
 mixer.addTrack(track);
 ```
 
-#### parameters
+##### parameters
 
 - track
   - type: MediaStreamTrack
   - description: The kind of MediaStreamTrack must 'audio', or it will throw an Error.
 
-#### return values
+##### return values
 
 - mixer
   - type: AudioTrackMixer
   - description: The method will return mixer itself to support the chain call.
 
 
-#### examples
+##### examples
 
 ```js
 mixer.addTrack(trackA);
@@ -118,7 +118,7 @@ It's a chain function, so you can also use it just like this
 mixer.addTrack(trackA).addTrack(trackB);
 ```
 
-### 3. getMixedTrack
+#### 3. getMixedTrack
 
 Get mixed audio track from the mixer after adding tracks.
 
@@ -126,18 +126,18 @@ Get mixed audio track from the mixer after adding tracks.
 const track = mixer.getMixedTrack();
 ```
 
-#### parameters
+##### parameters
 
 no parameters
 
-#### return values
+##### return values
 
 - track
   - type: MediaStreamTrack
   - description: -
 
 
-### 4. removeTrack
+#### 4. removeTrack
 
 Remove audio track if it has been already added into the mixer or will do nothing.
 
@@ -145,19 +145,19 @@ Remove audio track if it has been already added into the mixer or will do nothin
 mixer.removeTrack(track);
 ```
 
-#### parameters
+##### parameters
 
 - track
   - type: MediaStreamTrack
   - description: The kind of MediaStreamTrack must 'audio', or it will throw an Error. And the track must has been already added, or it will do nothing.
 
-#### return values
+##### return values
 
 - mixer
   - type: AudioTrackMixer
   - description: The method will return mixer itself to support the chain call.
 
-#### examples
+##### examples
 
 ```js
 mixer.removeTrack(trackA);
@@ -171,7 +171,7 @@ mixer.removeTrack(trackA).removeTrack(trackB)
 ```
 
 
-### 5. getTracks
+#### 5. getTracks
 
 Get all added audio tracks from the mixer. (not include the mixed one).
 
@@ -179,18 +179,18 @@ Get all added audio tracks from the mixer. (not include the mixed one).
 const tracks = mixer.getTracks();
 ```
 
-#### parameters
+##### parameters
 
 no parameters
 
-#### return values
+##### return values
 
 - tracks
   - type: Array
   - description: An array of MediaStreamTrack with kind 'audio'.
 
 
-### 6. getMixedMediaStream
+#### 6. getMixedMediaStream
 
 Get media stream which contains mixed audio track. 
 
@@ -198,20 +198,20 @@ Get media stream which contains mixed audio track.
 const stream = mixer.getMixedMediaStream();
 ```
 
-#### parameters
+##### parameters
 
 no parameters
 
-#### return values
+##### return values
 
 - stream
   - type: MediaStream
   - description: see [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
 
 
-## Static methods of AudioTrackMixer
+### Static methods of AudioTrackMixer
 
-### 1. getTracks
+#### 1. getTracks
 
 Get all audio tracks from a media stream.
 [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream).
@@ -220,13 +220,13 @@ Get all audio tracks from a media stream.
 const tracks = AudioTrackMixer.getTracks(stream);
 ```
 
-#### parameters
+##### parameters
 
 - stream
   - type: MediaStream
   - description: see [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
 
-#### return values
+##### return values
 
 - tracks
   - type: Array
