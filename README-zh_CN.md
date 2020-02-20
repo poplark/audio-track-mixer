@@ -85,7 +85,7 @@ const mixer = new AudioTrackMixer();
   - 描述: 方法将返回一个 AudioTrackMixer 对象。
 
 
-#### 2. addTrack
+#### 2. addTrack 方法
 
 将一个音频轨道添加到合并器中。
 
@@ -119,7 +119,7 @@ mixer.addTrack(trackB);
 mixer.addTrack(trackA).addTrack(trackB);
 ```
 
-#### 3. getMixedTrack
+#### 3. getMixedTrack 方法
 
 从合并器中获取被添加的音频轨道。
 
@@ -139,7 +139,7 @@ const track = mixer.getMixedTrack();
   - 描述: -
 
 
-#### 4. removeTrack
+#### 4. removeTrack 方法
 
 移除被添加的音频轨道（合并的音轨将自动移除该被删除的音频轨道的音效）。
 
@@ -173,7 +173,7 @@ mixer.removeTrack(trackA).removeTrack(trackB)
 ```
 
 
-#### 5. getTracks
+#### 5. getTracks 方法
 
 获取所有被添加到合并器的音频轨道。
 
@@ -192,7 +192,7 @@ const tracks = mixer.getTracks();
   - 描述: 返回值是包含若干个音频轨道的数组
 
 
-#### 6. getMixedMediaStream
+#### 6. getMixedMediaStream 方法
 
 获取包含合并后的音频轨道的媒体流。
 
@@ -209,6 +209,27 @@ const stream = mixer.getMixedMediaStream();
 - stream
   - 类型: MediaStream
   - 描述: 参见 [MediaStream](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream)
+
+
+#### 7. destroy 方法
+
+清除合并器内的缓存等，以销毁此合并器。
+
+```js
+const result = mixer.destroy();
+```
+
+> 最好获取结果抛出的错误以防止应用崩溃，就像这样处理：```result.then(function() { ... }).catch(function(err) { ... })```
+
+#### 参数
+
+无参数
+
+#### 返回值
+
+- result
+  - 类型: Promise
+  - 描述: -
 
 
 ### AudioTrackMixer 的静态方法

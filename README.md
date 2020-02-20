@@ -209,6 +209,27 @@ no parameters
   - description: see [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)
 
 
+#### 7. destroy
+
+Clear cache of the mixer to destroy it.
+
+```js
+const result = mixer.destroy();
+```
+
+> You'd better to catch error to prevent the crash of you APP, just like: ```result.then(function() { ... }).catch(function(err) { ... })```
+
+#### parameters
+
+no parameters
+
+#### return values
+
+- result
+  - type: Promise
+  - description: -
+
+
 ### Static methods of AudioTrackMixer
 
 #### 1. getTracks
