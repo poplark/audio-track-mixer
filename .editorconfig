@@ -1,6 +1,5 @@
-#
-http: //editorconfig.org
-  root = true
+# http: //editorconfig.org
+root = true
 
 [ * ]
 indent_style = space
