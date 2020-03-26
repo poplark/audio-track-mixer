@@ -34,7 +34,7 @@ yarn add audio-track-mixer
 ### ES6 规范
 
 ```js
-import AudioTrackMixer from './audio-track-mixer';
+import AudioTrackMixer from 'audio-track-mixer';
 ```
 
 ### npm 的 ES5 规范
