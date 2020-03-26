@@ -34,7 +34,7 @@ yarn add audio-track-mixer
 ### ES6
 
 ```js
-import AudioTrackMixer from './audio-track-mixer';
+import AudioTrackMixer from 'audio-track-mixer';
 ```
 
 ### ES5 with npm
