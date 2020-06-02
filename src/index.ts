@@ -9,6 +9,8 @@ interface TrackCache {
 
 const BASE = 128;
 
+// todo - use decorator to validate track
+
 export default class AudioTrackMixer {
   private audioContext: AudioContext
   private destinationNode: MediaStreamAudioDestinationNode
@@ -90,6 +92,30 @@ export default class AudioTrackMixer {
 
     if (cache) {
       cache.gainNode.gain.value = volume / 100;
+    }
+    return false;
+  }
+
+  muteTrack(track: MediaStreamTrack): boolean {
+    if (!track.kind || track.kind !== 'audio') {
+      throw new Error('not an audio track');
+    }
+    const cache: TrackCache | undefined = this.caches.get(track.id);
+    if (cache) {
+      cache.track.enabled = false;
+      return true;
+    }
+    return false;
+  }
+
+  unmuteTrack(track: MediaStreamTrack): boolean {
+    if (!track.kind || track.kind !== 'audio') {
+      throw new Error('not an audio track');
+    }
+    const cache: TrackCache | undefined = this.caches.get(track.id);
+    if (cache) {
+      cache.track.enabled = true;
+      return true;
     }
     return false;
   }
