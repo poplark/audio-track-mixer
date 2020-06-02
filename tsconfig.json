@@ -12,8 +12,12 @@
       "dom",
       "scripthost"
     ],
-    "moduleResolution": "node",
+    "moduleResolution": "classic",
     "importHelpers": true,
+    "baseUrl": "./",
+    "paths": {
+      "tslib": ["node_modules/tslib/tslib.d.ts"]
+    },
     "declaration": true,
     "pretty": true,
     "sourceMap": true,
@@ -22,7 +26,8 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "noUnusedParameters": true,
-    "removeComments": true
+    "removeComments": true,
+    "experimentalDecorators": true
   },
   "include": [
     "src/**/*",

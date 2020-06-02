@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.ts',
@@ -20,5 +21,7 @@ module.exports = {
       }
     }]
   },
-  plugins: []
+  plugins: [
+    new webpack.BannerPlugin(`Mix audio tracks (MediaStreamTrack) into one.\n \n@author poplark <https://github.com/poplark>\n@license MIT`)
+  ]
 }

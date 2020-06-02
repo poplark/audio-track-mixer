@@ -1,8 +1,15 @@
 .DS_Store
 node_modules
 
-lib/index.js.map
-
 .DS_Store
 
 yarn-error.log
+package-lock.json
+
+# builds
+lib/*
+
+# *.d.ts
+types/*
+
+
