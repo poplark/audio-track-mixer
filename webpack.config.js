@@ -22,6 +22,7 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.BannerPlugin(`Mix audio tracks (MediaStreamTrack) into one.\n \n@author poplark <https://github.com/poplark>\n@license MIT`)
+    new webpack.BannerPlugin(`Mix audio tracks (MediaStreamTrack) into one.\n \n@author poplark <https://github.com/poplark>\n@license MIT`),
+    new webpack.DefinePlugin({ __VERSION__: JSON.stringify(require("./package.json").version) })
   ]
 }

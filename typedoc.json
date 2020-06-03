@@ -1,0 +1,9 @@
+{
+  "mode": "file",
+  "out": "docs",
+  "exclude": [],
+  "disableSources": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "readme": "none"
+}
