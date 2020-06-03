@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const package = require('./package.json');
 
 module.exports = {
   entry: './src/index.ts',
@@ -22,7 +23,9 @@ module.exports = {
     }]
   },
   plugins: [
-    new webpack.BannerPlugin(`Mix audio tracks (MediaStreamTrack) into one.\n \n@author poplark <https://github.com/poplark>\n@license MIT`),
-    new webpack.DefinePlugin({ __VERSION__: JSON.stringify(require("./package.json").version) })
+    new webpack.BannerPlugin(`${package.description}\n \n@author ${package.author.name} <${package.author.url}>\n@license ${package.license}`),
+    new webpack.DefinePlugin({
+      __VERSION__: JSON.stringify(package.version)
+    })
   ]
 }
