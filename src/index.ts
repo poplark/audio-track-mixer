@@ -1,4 +1,4 @@
-const AudioContextClass = <typeof AudioContext>((<any>window).AudioContext || (<any>window).webkitAudioContext || (<any>window).mozAudioContext || (<any>window).msAudioContext || (<any>window).oAudioContext);
+const AudioContextClass = <typeof AudioContext>((window as any).AudioContext || (window as any).webkitAudioContext || (window as any).mozAudioContext || (window as any).msAudioContext || (window as any).oAudioContext);
 
 interface TrackCache {
   track: MediaStreamTrack
@@ -12,10 +12,11 @@ const BASE = 128;
 // todo - use decorator to validate track
 
 export default class AudioTrackMixer {
-  private audioContext: AudioContext
-  private destinationNode: MediaStreamAudioDestinationNode
-  private caches: Map<string, TrackCache> = new Map()
+  private audioContext: AudioContext;
+  private destinationNode: MediaStreamAudioDestinationNode;
+  private caches: Map<string, TrackCache> = new Map();
 
+  private analyserSourceNode: MediaStreamAudioSourceNode;
   private analyser: AnalyserNode
   private timeDomainData: Uint8Array
 
@@ -34,13 +35,15 @@ export default class AudioTrackMixer {
 
     this.destinationNode = this.audioContext.createMediaStreamDestination();
 
+    const outStream = this.destinationNode.stream;
+    this.analyserSourceNode = this.audioContext.createMediaStreamSource(outStream);
     this.analyser = this.audioContext.createAnalyser();
     this.timeDomainData = new Uint8Array(this.analyser.frequencyBinCount);
-    this.destinationNode.connect(this.analyser);
+    this.analyserSourceNode.connect(this.analyser);
 
     // hack - safari 浏览器（desktop, mobile未知) 切换屏幕时，Audio 被关闭的问题
     this.audioContext.onstatechange = () => {
-      if (<any>this.audioContext.state === 'interrupted') {
+      if ((this.audioContext as any).state === 'interrupted') {
         this.audioContext.resume();
       }
     }
