@@ -1,6 +1,6 @@
 {
   "name": "audio-track-mixer",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A mixer which can mix two (or more) audio tracks (MediaStreamTrack) into one.",
   "main": "lib/index.js",
   "scripts": {
