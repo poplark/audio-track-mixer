@@ -62,7 +62,7 @@ const mixedTrack = mixer.getMixedTrack();
 
 ## API
 
-### See full [APIS](https://poplark.github.io/audio-track-mixer/).
+### See full [APIs](https://poplark.github.io/audio-track-mixer/).
 
 ### Some Basic Methods of AudioTrackMixer
 

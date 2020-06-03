@@ -62,7 +62,7 @@ const mixedTrack = mixer.getMixedTrack();
 
 ## API
 
-### 查看全部 [APIS](https://poplark.github.io/audio-track-mixer/).
+### 查看全部 [API](https://poplark.github.io/audio-track-mixer/).
 
 ### AudioTrackMixer 一些基本的方法
 
