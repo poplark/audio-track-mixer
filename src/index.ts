@@ -310,7 +310,7 @@ export default class AudioTrackMixer {
   }
 
   /**
-   * Sometimes, you may get a [MediaStream](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream), this function will extract all audio tracks from the MediaStream
+   * Sometimes, you may have a source [MediaStream](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream), this function will extract all audio tracks from the MediaStream
    * 
    * @param stream A source MediaStream
    * @returns An Array of audio kind MediaStreamTrack
