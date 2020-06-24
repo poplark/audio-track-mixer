@@ -3,6 +3,7 @@
   "version": "0.3.3",
   "description": "A mixer which can mix two (or more) audio tracks (MediaStreamTrack) into one.",
   "main": "lib/index.js",
+  "types": "types",
   "scripts": {
     "dev": "webpack --config webpack.dev.js",
     "build": "rm -rf types && rm -rf lib && webpack --config webpack.prod.js",
